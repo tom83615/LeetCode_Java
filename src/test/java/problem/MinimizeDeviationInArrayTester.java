@@ -31,22 +31,4 @@ public class MinimizeDeviationInArrayTester {
 
         Assertions.assertEquals(Actual, result);
     }
-
-    @Test
-    public void example4(){
-        int[] nums  = {0,0};
-        int Actual = 0;
-        int result = MinimizeDeviationInArray.minimumDeviation(nums);
-
-        Assertions.assertEquals(Actual, result);
-    }
-
-    @Test
-    public void example4(){
-        int[] nums  = {3,5};
-        int Actual = 1;
-        int result = MinimizeDeviationInArray.minimumDeviation(nums);
-
-        Assertions.assertEquals(Actual, result);
-    }
 }
