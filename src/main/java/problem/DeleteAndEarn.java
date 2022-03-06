@@ -26,11 +26,9 @@ package problem;
 //        1 <= nums.length <= 2 * 104
 //        1 <= nums[i] <= 104
 
-import org.omg.CORBA.Object;
 
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Set;
 
 public class DeleteAndEarn {
     public static int deleteAndEarn(int[] nums) {
