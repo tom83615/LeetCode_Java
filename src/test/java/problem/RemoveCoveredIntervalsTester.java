@@ -24,7 +24,7 @@ public class RemoveCoveredIntervalsTester {
 
     @Test
     public void example3(){
-        int[][] nums  = {{1,4},{1,5}};
+        int[][] nums  = {{1,4},{2,5}};
         int Actual = 2;
         int result = RemoveCoveredIntervals.removeCoveredIntervals(nums);
 
