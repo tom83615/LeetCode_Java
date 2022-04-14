@@ -4,7 +4,6 @@ public class GameOfLife {
     public static void gameOfLife(int[][] board) {
         int lengx = board.length;
         int lengy = board[0].length;
-        int[][] resultBoard = new int[lengx][lengy];
 
         // all dead matrix
         if(lengx < 2 || lengy < 2){
@@ -27,19 +26,7 @@ public class GameOfLife {
         for(int i=1; i<lengx+1; i++){
             for(int j=1; j<lengy+1; j++){
                 int count = countNeighbors(extendBoard, i, j);
-                int netG = 0;
-                if(count == 3 || count == 2 && extendBoard[i][j] == 1){
-                    netG = 1;
-                }
-
-                resultBoard[i-1][j-1] = netG;
-            }
-        }
-
-        //repand
-        for(int x=0; x<lengx; x++){
-            for(int y=0; y<lengy; y++){
-                board[x][y] = resultBoard[x][y];
+                board[i-1][j-1] = (count == 3 || count == 2 && extendBoard[i][j] == 1)? 1: 0;
             }
         }
     }
