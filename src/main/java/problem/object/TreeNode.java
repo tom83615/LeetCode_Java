@@ -16,6 +16,7 @@ public class TreeNode<E>{
     public TreeNode() {}
     public TreeNode(E val) { this.val = val; }
     public TreeNode(E val, TreeNode<E> left, TreeNode<E> right) { this.val = val; this.left = left; this.right = right;}
+    @SafeVarargs
     public TreeNode(E... val) {
         HashMap<Integer, TreeNode<E>> map = new HashMap<>();
         // root
@@ -74,8 +75,8 @@ public class TreeNode<E>{
         TreeNode<E> treeNode = (TreeNode<E>) o;
 
         return val == treeNode.val &&
-                ((left == null && treeNode.left == null) || left.equals(treeNode.left)) &&
-                ((right == null && treeNode.right == null) || right.equals(treeNode.right));
+                (left == null && treeNode.left == null) || ((left != null && treeNode.left != null && left.equals(treeNode.left))) &&
+                (right == null && treeNode.right == null) || ((right != null && treeNode.right != null && right.equals(treeNode.right)));
     }
 
     @Override
@@ -84,7 +85,7 @@ public class TreeNode<E>{
     }
 
     public ArrayList<E> searchAll(){
-        ArrayList<E> list = new ArrayList<E>();
+        ArrayList<E> list = new ArrayList<>();
         search(this, list);
         return list;
     }
