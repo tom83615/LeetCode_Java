@@ -54,16 +54,16 @@ public class FlattenNestedListIterator implements Iterator<Integer> {
  */
 
 
-    List<Integer> list;
+    Queue<Integer> queue;
     public FlattenNestedListIterator(List<NestedInteger> nestedList) {
-        list = new LinkedList<>();
+        queue = new ArrayDeque<>();
         helper(nestedList);
     }
 
     private void helper(List<NestedInteger> nestedList){
         for(NestedInteger nestedInteger : nestedList){
             if(nestedInteger.isInteger()){
-                list.add(nestedInteger.getInteger());
+                queue.add(nestedInteger.getInteger());
             }else{
                 helper(nestedInteger.getList());
             }
@@ -72,12 +72,12 @@ public class FlattenNestedListIterator implements Iterator<Integer> {
 
     @Override
     public Integer next() {
-        return list.remove(0);
+        return queue.remove();
     }
 
     @Override
     public boolean hasNext() {
-        return !list.isEmpty();
+        return !queue.isEmpty();
     }
 }
 
