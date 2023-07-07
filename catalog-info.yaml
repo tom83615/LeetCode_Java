@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: LeetCode_Java
+  annotations:
+    github.com/project-slug: tom83615/LeetCode_Java
+spec:
+  type: other
+  lifecycle: unknown
