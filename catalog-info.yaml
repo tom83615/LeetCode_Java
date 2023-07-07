@@ -5,6 +5,6 @@ metadata:
   annotations:
     github.com/project-slug: tom83615/LeetCode_Java
 spec:
-  owner: guest
+  owner: guest@example.com
   type: other
   lifecycle: unknown
